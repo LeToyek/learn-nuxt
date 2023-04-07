@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-  const items : Ref<string[]> = ref([])
+  const items : Ref<string[]> = ref(["ngaji"])
   const todo : Ref = ref()
   const addTodo = () => {
     items.value.push(todo.value)

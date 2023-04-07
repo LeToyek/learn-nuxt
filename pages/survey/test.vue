@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>INDEX PAGE</h1>
-    
-      
+    <h1>HELLO</h1>
   </div>
 </template>
 
