@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "nuxt": "^3.3.3"
+  },
+  "dependencies": {
+    "survey-creator-knockout": "^1.9.81",
+    "survey-vue-ui": "^1.9.81"
   }
 }
