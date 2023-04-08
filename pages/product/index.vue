@@ -23,6 +23,9 @@
       </div>
 
     </div>
+    <h4>
+      {{ data }}
+    </h4>
     <NuxtLink to="/todo">
       Move to Todo
     </NuxtLink>
@@ -44,8 +47,12 @@ interface Product {
   id: string | number,
   title: string,
 }
-
-const { data: products } = await useFetch<Product[]>("https://fakestoreapi.com/products")
+const {data} = await useFetch("/api/testt?name=toyeq",{
+  method: "post",
+  body: {age: 17}
+})
+console.log(data)
+const {data:products}  = await useFetch<Product[]>("/api/store")
 </script>
 
 <style scoped>
