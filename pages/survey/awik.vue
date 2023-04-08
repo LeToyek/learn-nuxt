@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>INDEX PAGE</h1>
-    
-      <Survey/>
+    <h1>
+      zzz
+    </h1>
   </div>
 </template>
 

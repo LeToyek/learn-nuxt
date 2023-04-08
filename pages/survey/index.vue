@@ -1,11 +1,12 @@
 <template>
   <div>
     <!-- Tempatkan konten survey creator di sini -->
-    <div id="surveyCreator"></div>
+      <div id="surveyCreator"></div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Model, StylesManager } from "survey-core";
 import "survey-core/defaultV2.min.css";
 import "survey-creator-core/survey-creator-core.min.css";
 import { SurveyCreator } from "survey-creator-knockout";
@@ -27,6 +28,25 @@ onMounted(() => {
     surveyCreatorRef.value.render("surveyCreator");
   }
 });
+
+const surveyJson = {
+  elements: [
+    {
+      name: "FirstName",
+      title: "Enter your first name:",
+      type: "text",
+    },
+    {
+      name: "LastName",
+      title: "Enter your last name:",
+      type: "text",
+    },
+  ],
+};
+StylesManager.applyTheme("defaultV2");
+const survey = new Model(surveyJson);
+survey.focusFirstQuestionAutomatic = false;
+
 </script>
 
 <style scoped>

@@ -1,11 +1,18 @@
 <template>
-  <Survey :survey="survey" />
+  <div >
+    <h1>asok</h1>
+    <ClientOnly>
+      <Survey :survey="survey" />
+    </ClientOnly>
+  </div>
+
 </template>
 
-<script>
+<script setup lang="ts">
 import { Model, StylesManager } from "survey-core";
 import "survey-core/defaultV2.min.css";
 import { Survey } from "survey-vue-ui";
+
 
 StylesManager.applyTheme("defaultV2");
 
@@ -23,27 +30,7 @@ const surveyJson = {
     },
   ],
 };
+const survey = new Model(surveyJson);
+survey.focusFirstQuestionAutomatic = false;
 
-export default {
-  name: "MyFirstSurvey",
-  components: {
-    Survey,
-  },
-  data() {
-    const survey = new Model(surveyJson);
-    survey.focusFirstQuestionAutomatic = false;
-
-    survey.onComplete.add(this.alertResults);
-
-    return {
-      survey,
-    };
-  },
-  methods: {
-    alertResults(sender) {
-      const results = JSON.stringify(sender.data);
-      alert(results);
-    },
-  },
-};
 </script>
