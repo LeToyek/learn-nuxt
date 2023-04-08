@@ -5,3 +5,6 @@
 body{
   @apply bg-gray-50
 }
+.btn{
+  @apply mt-4 py-1 px-2 bg-yellow-500 rounded-md font-bold text-white
+}
