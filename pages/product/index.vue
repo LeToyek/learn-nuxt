@@ -51,7 +51,7 @@ const {data} = await useFetch("/api/testt?name=toyeq",{
   method: "post",
   body: {age: 17}
 })
-console.log(data)
+
 const {data:products}  = await useFetch<Product[]>("/api/store")
 </script>
 
