@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>INDEX PAGE</h1>
+    <h1 class="text-3xl font-bold">INDEX PAGE</h1>
     
       <Survey/>
   </div>
