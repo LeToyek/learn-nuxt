@@ -1,10 +1,6 @@
 <template>
-  <div>
-    <!-- <input class="testInput" type="text" v-model="textValue" @input="inputType">
-    <h1>Change Realtime: {{ textValue }}</h1>
-    <input class="testInput" type="text" v-model="textClickPointer">
-    <h2>Change onClick: {{ textClick }}</h2>
-    <button @click="inputClick">Update</button> -->
+  <h1 v-if="!isDone">Loading</h1>
+  <div v-else>
 
     <h1>List of Products</h1>
     <div class=" grid sm:grid-cols-1 md:grid-cols-3 gap-5 ">
@@ -12,7 +8,7 @@
         <h4 class="font-bold truncate">
           {{ p.title }}
         </h4>
-        <NuxtLink :to="`/product/${p.id}`" >
+        <NuxtLink :to="`/product/${p.id}`">
           <button class="btn">
             <h5 class="font-semibold text-sm text-white">
               Detail
@@ -32,28 +28,26 @@
   </div>
 </template>
 <script setup lang="ts">
-const textValue: Ref<string> = ref("init state")
-const textClickPointer: Ref = ref()
-const textClick: Ref<string> = ref("init Click")
-
-function inputType(e: Event): void {
-  textValue.value = (e.target as HTMLInputElement).value
-}
-
-function inputClick(): void {
-  textClick.value = textClickPointer.value
-}
+const isDone: Ref<Boolean> = ref(false)
+  console.log(isDone.value)
 interface Product {
   id: string | number,
   title: string,
 }
-const {data} = await useFetch("/api/testt?name=toyeq",{
+
+const { data } = await useFetch("/api/testt?name=toyeq", {
   method: "post",
-  body: {age: 17}
+  body: { age: 17 }
 })
 
-const {data:products}  = await useFetch<Product[]>("/api/store")
+const { data: products } = await useFetch<Product[]>("/api/store")
+isDone.value = true
+console.log(isDone.value)
+
+
+
 </script>
+
 
 <style scoped>
 .testInput {

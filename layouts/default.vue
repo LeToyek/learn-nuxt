@@ -68,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-const isOpen: boolean = false
+const isOpen: Ref<Boolean> = ref(false);
 </script>
 
 <style scoped>

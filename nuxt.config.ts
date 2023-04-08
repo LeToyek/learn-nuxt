@@ -9,6 +9,9 @@ export default defineNuxtConfig({
   },
   typescript:{
     strict: false
-  }
+  },
+  modules:[
+    '@pinia/nuxt'
+  ]
   
 })

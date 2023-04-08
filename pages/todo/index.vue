@@ -4,8 +4,8 @@
     <h3>Add Todo</h3>
     <input v-model="todo" type="text" />
     <br>
-    <button @click="addTodo">Add Todo</button>
-    <h2 v-for="item in items">
+    <button @click="addTodo(todo)">Add Todo</button>
+    <h2 v-for="item in todoList">
          {{ item }}
     </h2>
     <NuxtLink to="/product">
@@ -15,12 +15,15 @@
 </template>
 
 <script setup lang="ts">
-  const items : Ref<string[]> = ref(["ngaji"])
-  const todo : Ref = ref()
-  const addTodo = () => {
-    items.value.push(todo.value)
-    console.log(items)
-  }
+  import { storeToRefs } from "pinia";
+import useTodoStore from "~/store/todos";
+  
+  const todo = ref("")
+  const todoStore = useTodoStore()
+  const addTodo = (todo :string) => todoStore.addValueToTodo(todo)
+  const todoList = storeToRefs(todoStore)
+  
+
 
 </script>
 
