@@ -5,7 +5,7 @@
         <div class="md:w-[32rem]">
           <img :src="`${product.image}`" class="thumb w-max h-max" />
         </div>
-        <div class="sm:ml-10">
+        <div class="sm:ml-10"  >
           <div class="font-bold text-4xl mb-2 text-gray-600">{{ product.title }}</div>
           <p class="text-gray-700 text-base">
             {{ product.description }}

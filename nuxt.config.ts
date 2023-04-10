@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     strict: false
   },
   modules:[
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '~/modules/router.js'
   ]
   
 })
