@@ -7,12 +7,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     }
   },
-  typescript:{
-    strict: false
-  },
   modules:[
     '@pinia/nuxt',
-    '~/modules/router.js'
+    '~/modules/router.ts'
   ]
   
 })

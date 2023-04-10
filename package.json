@@ -18,6 +18,7 @@
     "@pinia/nuxt": "^0.4.8",
     "pinia": "^2.0.34",
     "survey-creator-knockout": "^1.9.81",
-    "survey-vue-ui": "^1.9.81"
+    "survey-vue-ui": "^1.9.81",
+    "vue-router": "^4.1.6"
   }
 }
